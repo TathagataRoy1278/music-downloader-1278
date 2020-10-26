@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+<title>Music Downloader by TriggeredMollusc</title>
+<style>
+
+body {background-color : black;
+	text-align:center;
+	color : white;
+}
+</style>
+
+</head>
+
+<body>
+
+<b> Music Downloader </b>
+<p> JUST ENTER THE SEARCH TEXT AND PRESS SEARCH AND DOWNLOAD THE GIVEN LINK</p>
+
+<form action = {% url 'result' %} method = "GET">
+<input type = "search" name = "stext">
+<input type = "submit" value = "GET LINK">
+</form>
+
+</html>
