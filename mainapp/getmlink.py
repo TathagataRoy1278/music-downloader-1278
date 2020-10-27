@@ -5,15 +5,16 @@ import urllib.request
 import re
 import sys
 import youtube_dl
-import os
+import requests
+
 
 def getlink(str):
 	search_keyword = urllib.parse.quote(str)
-	html = urllib.request.urlopen("https://www.youtube.com/results?search_query=" + search_keyword)
+	html = requests.get("https://www.youtube.com/results?search_query=" + search_keyword)
 
 	print(search_keyword)
 
-	video_ids = re.findall(r"watch\?v=(\S{11})", html.read().decode())
+	video_ids = re.findall(r"watch\?v=(\S{11})", html.text)
 
 	print("The video ids are : ",video_ids)
 
