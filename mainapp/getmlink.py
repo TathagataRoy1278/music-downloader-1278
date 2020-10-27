@@ -32,8 +32,10 @@ def getlink(str):
 	}
 
 	r = youtube_dl.YoutubeDL(ydl_opts)
-	
+
 	info = r.extract_info(url, download = False)
+
+	print(info['url'])
 
 	return info['url']
 
