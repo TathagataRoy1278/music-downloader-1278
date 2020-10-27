@@ -14,9 +14,12 @@ def getlink(str):
 	print(search_keyword)
 
 	video_ids = re.findall(r"watch\?v=(\S{11})", html.read().decode())
+
+	print("The video ids are : ",video_ids)
+
 	url = "https://www.youtube.com/watch?v=" + video_ids[0]
 
-	print("sudo snap run youtube-dl -x "+url+" -o \"/media/tatan/F4CA6589CA654946/Users/ANKITA/Music/%(title)s.%(ext)s\"")
+	print("Selected youtube url is ", url)
 
 	ydl_opts = {
 	    'format': 'bestaudio/best',
